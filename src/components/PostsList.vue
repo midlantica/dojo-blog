@@ -10,7 +10,7 @@
 <script>
   import { onMounted, onUnmounted, onUpdated} from 'vue'
 
-  import SinglePost from "./SinglePost"
+  import SinglePost from "./SinglePost.vue"
 
   export default {
     props: ['postsProp'],

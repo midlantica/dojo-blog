@@ -1,12 +1,11 @@
 <template>
   <main>
-
     <h1>Home</h1>
     <input type="text" v-model="search">
     <p>Search term:</p>
     <p>{{search || "––"}}&nbsp;</p>
     <div v-for="name in matchingNames" :key="name">{{ name }}</div>
-    <button @click="handleClick">Stop de watch</button>
+    <button @click="handleClick">Stop the watch</button>
   </main>
 </template>
 
