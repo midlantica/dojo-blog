@@ -1,6 +1,5 @@
 <template>
   <main>
-    <h1>Home</h1>
     <PostsList :posts="posts"/>
   </main>
 </template>

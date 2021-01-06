@@ -1,44 +1,46 @@
 <template>
   <div class="post">
-    <h4>{{ post.title }}</h4>
+    <router-link :to="{ name: 'Details', params: { id: post.id }}">
+      <h3>{{ post.title }}</h3>
+    </router-link>
     <p>{{ snippet }}</p>
+    <span v-for="tag in post.tags" :key="tag">
+      #{{ tag }}
+    </span>
   </div>
-
 </template>
 
 <script>
-  import { computed } from 'vue'
-
-  export default {
-    props: ['post'],
-    setup(props) {
-
-      const snippet = computed(() => {
-        return props.post.body.substring(0,100) + '...'
-      })
-
-      return { snippet }
-    }
+import { computed } from 'vue'
+export default {
+  props: ['post'],
+  setup(props) {
+    const snippet = computed(() => {
+      return props.post.body.substring(0, 100) + '...'
+    })
+    return { snippet }
   }
+}
 </script>
 
 <style>
-  p {
-    /* color: red;  */
+  .post {
+    margin: 0 auto 30px;
+    padding-bottom: 0;
+    border-bottom: 1px dashed #e7e7e7;
   }
-
-  .tag {
-    padding: .25rem .75rem;
-    background: rgb(223, 223, 223);
-    border-radius: 1rem;
-    color: rgb(77, 77, 77);
-    font-size: .85rem;
-    margin: 0 .15rem;
-    cursor: pointer;
+  .post h3 {
+    display: inline-block;
+    position: relative;
+    font-size: 1.5rem;
+    color: rgb(145, 145, 145);
+    margin-bottom: 10px;
+    max-width: 400px;
   }
-
-  .tag:hover {
-    color: rgb(26, 26, 26);
-    background: rgb(209, 209, 209);
+   .post h3:hover {
+     color: rgb(80, 80, 80);
+   }
+  .post p {
+    margin: 0;
   }
 </style>
