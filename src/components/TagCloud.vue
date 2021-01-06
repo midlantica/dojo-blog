@@ -40,7 +40,11 @@
     color: black;
     border-radius: 2rem;
     margin-right: .5rem;
-    margin: 0.15rem .15rem;;
+    margin: 0.15rem .15rem;
+    text-decoration: none;
+  }
+  .tag-pill a {
+    text-decoration: none;
   }
   .tag-pill:hover {
     background: rgb(170, 170, 170);
