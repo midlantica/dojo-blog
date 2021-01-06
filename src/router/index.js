@@ -22,7 +22,7 @@ const routes = [
     component: Create
   },
   {
-    path: '/tag/:tag',
+    path: '/tags/:tag',
     name: 'Tag',
     component: Tag
   }

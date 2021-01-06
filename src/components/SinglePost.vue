@@ -4,8 +4,8 @@
       <h3>{{ post.title }}</h3>
     </router-link>
     <p>{{ snippet }}</p>
-    <span v-for="tag in post.tags" :key="tag">
-      <span class="tag">#{{ tag }}</span>
+    <span v-for="tag in post.tags" :key="tag" class="tag">
+      #{{ tag }}
     </span>
   </div>
 </template>
@@ -33,7 +33,7 @@
   .post h3 {
     display: inline-block;
     position: relative;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: rgb(145, 145, 145);
     margin-bottom: 10px;
     max-width: 400px;
@@ -42,14 +42,20 @@
      color: rgb(80, 80, 80);
    }
   .post p {
-    margin: 0;
+    margin: 0 0 1rem;
   }
-
   .tag {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 10px;
-    background: grey;
-
+    font-size: .75rem;
+    margin: .25rem .25rem .25rem 0;
+    padding: .3rem .65rem;
+    color: black;
+    background: rgb(214, 214, 214);
+    display: inline-block;
+    border-radius: 2rem;
+    cursor: pointer;
+    letter-spacing: 0.025rem;
+  }
+  .tag:hover {
+    background: rgb(175, 175, 175);
   }
 </style>

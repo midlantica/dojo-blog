@@ -27,7 +27,8 @@ export default {
   }
   header h1 {
     color: #9c9c9c;
-    font-size: 2.5rem;;
+    font-size: 2rem;
+    letter-spacing: -0.05rem;;
   }
   header a {
     color: rgb(126, 126, 126);
