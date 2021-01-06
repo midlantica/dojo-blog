@@ -5,22 +5,23 @@
     </router-link>
     <p>{{ snippet }}</p>
     <span v-for="tag in post.tags" :key="tag">
-      #{{ tag }}
+      <span class="tag">#{{ tag }}</span>
     </span>
   </div>
 </template>
 
 <script>
-import { computed } from 'vue'
-export default {
-  props: ['post'],
-  setup(props) {
-    const snippet = computed(() => {
-      return props.post.body.substring(0, 100) + '...'
-    })
-    return { snippet }
+  import { computed } from 'vue'
+
+  export default {
+    props: ['post'],
+    setup(props) {
+      const snippet = computed(() => {
+        return props.post.body.substring(0, 100) + '...'
+      })
+      return { snippet }
+    }
   }
-}
 </script>
 
 <style>
@@ -42,5 +43,13 @@ export default {
    }
   .post p {
     margin: 0;
+  }
+
+  .tag {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    background: grey;
+
   }
 </style>

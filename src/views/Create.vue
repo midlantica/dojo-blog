@@ -32,6 +32,7 @@
 
       const router = useRouter()
       console.log(router)
+      // router.go(-1)
 
       const handleKeydown = () => {
         if(!tags.value.includes(tag.value)) {
@@ -90,7 +91,7 @@
   button {
     display: block;
     margin-top: 30px;
-    background: #ff8800;
+    background: #e47900;
     color: white;
     border: none;
     padding: 8px 16px;

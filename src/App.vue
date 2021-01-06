@@ -18,5 +18,6 @@
     color: #2c3e50;
     max-width: 50rem;
     margin: 0 auto;
+    padding: 0rem 2rem;
   }
 </style>
