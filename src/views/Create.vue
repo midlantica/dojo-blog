@@ -22,17 +22,16 @@
 <script>
   import { ref } from 'vue'
   import { useRouter } from 'vue-router'
+  import { projectFirestore, timestamp } from '../firebase/config'
 
   export default {
     setup() {
       const title = ref('')
       const body = ref('')
-      const tag = ref('')
       const tags = ref([])
+      const tag = ref('')
 
       const router = useRouter()
-      console.log(router)
-      // router.go(-1)
 
       const handleKeydown = () => {
         if(!tags.value.includes(tag.value)) {
@@ -46,15 +45,11 @@
         const post = {
           title: title.value,
           body: body.value,
-          tags: tags.value
+          tags: tags.value,
+          createdAt: timestamp()
         }
-
-        await fetch('http://localhost:3000/posts', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(post)
-        })
-
+        const res = await projectFirestore.collection('posts').add(post)
+        router.push({ name: 'Home' })
       }
 
       return { title, body, tag, tags, handleKeydown, handleSubmit }

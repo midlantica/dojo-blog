@@ -30,7 +30,6 @@
   .post {
     margin: 0 auto 30px;
     padding-bottom: 0;
-    border-bottom: 1px dashed #e7e7e7;
   }
   .post h3 {
     display: inline-block;

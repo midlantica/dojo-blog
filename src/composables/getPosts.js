@@ -7,15 +7,15 @@ const getPosts = () => {
 
   const load = async () => {
     try {
-      const res = await projectFirestore.collection('posts').get()
+      const res = await projectFirestore.collection('posts')
+        .orderBy('createdAt', 'desc')
+        .get()
 
       posts.value = res.docs.map(doc => {
         // console.log(doc.data(), doc.id );
         return { ...doc.data(), id: doc.id }
       })
-
       // console.log(res.docs)
-
     } catch (err) {
       error.value = err.message
       console.log(error.value)
